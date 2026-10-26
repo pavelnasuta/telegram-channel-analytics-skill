@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project.schema.json",
+  "title": "Telegram Channel Analytics project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_name",
+    "timezone",
+    "primary_channel",
+    "measurement_policy",
+    "methodology_version",
+    "methodology_effective_at"
+  ],
+  "properties": {
+    "project_name": {"type": "string", "minLength": 1},
+    "timezone": {"type": "string", "minLength": 1},
+    "primary_channel": {"type": "string", "minLength": 1},
+    "measurement_policy": {"type": "string", "minLength": 1},
+    "methodology_version": {"type": "string", "minLength": 1},
+    "methodology_effective_at": {"type": "string", "format": "date-time"}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "watchlist.schema.json",
+  "title": "Versioned public-channel comparison watchlist",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["watchlist_id", "version", "created_at", "channels"],
+  "properties": {
+    "watchlist_id": {"type": "string", "minLength": 1},
+    "version": {"type": "integer", "minimum": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["channel", "reason", "topic", "language", "size_range", "formats"],
+        "properties": {
+          "channel": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1},
+          "topic": {"type": "string", "minLength": 1},
+          "language": {"type": "string", "minLength": 1},
+          "size_range": {"type": "string", "minLength": 1},
+          "formats": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}
