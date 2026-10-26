@@ -26,6 +26,17 @@ class PublicPackageContractTests(unittest.TestCase):
         self.assertIn("monthly", skill)
         self.assertIn("yearly", skill)
 
+    def test_canonical_skill_links_every_installable_support_file(self) -> None:
+        skill = SKILL.read_text(encoding="utf-8")
+        for support_file in (
+            "scripts/validate_project.py",
+            "templates/project.schema.json",
+            "templates/snapshot.schema.json",
+            "templates/watchlist.schema.json",
+            "templates/weekly-report.template.md",
+        ):
+            self.assertIn(f"]({support_file})", skill)
+
     def test_adapters_point_to_the_canonical_workflow(self) -> None:
         for path in ADAPTERS:
             self.assertTrue(path.is_file(), path)
@@ -42,7 +53,7 @@ class PublicPackageContractTests(unittest.TestCase):
     def test_readme_documents_install_limitations_and_v1_release_notes(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         for expected in (
-            "v1.0.0",
+            "v1.0.1",
             "Privacy",
             "Limitations",
             "hermes skills install",

@@ -1,7 +1,7 @@
 ---
 name: telegram-channel-analytics
 description: Use when tracking Telegram channel content performance.
-version: 1.0.0
+version: 1.0.1
 author: Pavel Nasuta, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -43,7 +43,15 @@ Never request or use personal-account developer credentials, authentication file
 
 ## Evidence model
 
-Use the templates in `templates/` and keep this layout inside the chosen project directory:
+Use the project layout below. The linked support files are included by a direct Hermes installation:
+
+- [offline validator](scripts/validate_project.py)
+- [project contract](templates/project.schema.json)
+- [post and channel snapshot contract](templates/snapshot.schema.json)
+- [comparative watchlist contract](templates/watchlist.schema.json)
+- [weekly editorial report template](templates/weekly-report.template.md)
+
+Keep this layout inside the chosen project directory:
 
 ```text
 project.json
