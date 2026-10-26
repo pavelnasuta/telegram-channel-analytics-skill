@@ -5,7 +5,8 @@ A read-only, evidence-led workflow for weekly Telegram editorial reporting. It k
 ## Install
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/pavelnasuta/telegram-channel-analytics-skill/main/skills/telegram-channel-analytics/SKILL.md
+hermes skills tap add pavelnasuta/telegram-channel-analytics-skill
+hermes skills install pavelnasuta/telegram-channel-analytics-skill/skills/telegram-channel-analytics
 ```
 
 The canonical workflow lives in `skills/telegram-channel-analytics/SKILL.md`. Thin adapters for Claude Code, Codex, and generic agent instruction files point to the same contract.
@@ -43,6 +44,10 @@ python3 skills/telegram-channel-analytics/scripts/validate_project.py path/to/pr
 Report bugs or request improvements through [GitHub Issues](https://github.com/pavelnasuta/telegram-channel-analytics-skill/issues).
 
 ## Release notes
+
+### v1.0.2
+
+- Installation now uses a repository tap, so Hermes receives the full skill directory instead of a standalone markdown file.
 
 ### v1.0.1
 

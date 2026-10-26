@@ -53,9 +53,10 @@ class PublicPackageContractTests(unittest.TestCase):
     def test_readme_documents_install_limitations_and_v1_release_notes(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         for expected in (
-            "v1.0.1",
+            "v1.0.2",
             "Privacy",
             "Limitations",
+            "hermes skills tap add",
             "hermes skills install",
             "pavelnasuta/telegram-channel-analytics-skill",
         ):

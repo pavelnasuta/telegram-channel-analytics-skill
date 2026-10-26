@@ -1,7 +1,7 @@
 ---
 name: telegram-channel-analytics
 description: Use when tracking Telegram channel content performance.
-version: 1.0.1
+version: 1.0.2
 author: Pavel Nasuta, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
